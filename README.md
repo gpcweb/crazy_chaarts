@@ -1,10 +1,21 @@
 # CrazyChaarts
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crazy_chaarts`. To experiment with that code, run `bin/console` for an interactive prompt.
+CrazyChaarts is a gem that will help you to generate images charts using phantomjs and highcharts. So if you want to generate some charts you need to install phantomjs in your system and have highcharts-convert.js (and its dependencies) inside a folder in your rails app. By default CrazyChaarts expects highcharts-convert.js inside vendor/highcharts. However you can tell him to search inside another folder.
 
-TODO: Delete this and the text above, and describe your gem
+At the moment we can only generate LineCharts.
 
 ## Installation
+
+### PhantomJs
+
+    $ cd /usr/local/share
+    $ sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
+    $ sudo tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2
+    $ sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+    $ sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+    $ sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+
+### CrazyCharts
 
 Add this line to your application's Gemfile:
 
@@ -14,7 +25,7 @@ gem 'crazy_chaarts'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -22,7 +33,45 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Inside your custom class, background job or controller:
+
+```ruby
+chart = CrazyChaarts::LineChart.new()
+chart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec']
+chart.series_data = [
+											{
+		                    name: '2014',
+		                    data: [1230, 1530, 1470, 1590, 2450, 1260, 1850, 1260, 1620, 1320, 1470, 1840],
+		                    color: '#0B2E4F',
+		                    marker: {
+		                     symbol: 'circle'
+		                    }
+		                  },
+		                  {
+		                    name: '2015',
+		                    data: [1530, 1470, 1590, 1891, 1100, 890, 1250, 1470, 1860, 1230, 1320, 2200],
+		                    color: '#176E99',
+		                    marker: {
+		                     symbol: 'circle'
+		                    }
+		                  }
+		                ]
+chart.to_img()
+```
+
+This will generate a chart.json and a chart.png inside the tmp folder in your rails app.
+
+If you want to change the name and location of your files, you can do it like so:
+
+```ruby
+chart = CrazyChaarts::LineChart.new({ input_file: "/some/path/file.json", output_file: "/some/path/file.png" })
+```
+
+If you want to override the default location of highcharts-convert.js:
+
+```ruby
+chart = CrazyChaarts::LineChart.new({ highcharts_path: "/some/path/highcharts-convert.js" })
+```
 
 ## Development
 
