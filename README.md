@@ -39,23 +39,23 @@ Inside your custom class, background job or controller:
 chart = CrazyChaarts::LineChart.new()
 chart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec']
 chart.series_data = [
-											{
-		                    name: '2014',
-		                    data: [1230, 1530, 1470, 1590, 2450, 1260, 1850, 1260, 1620, 1320, 1470, 1840],
-		                    color: '#0B2E4F',
-		                    marker: {
-		                     symbol: 'circle'
-		                    }
-		                  },
-		                  {
-		                    name: '2015',
-		                    data: [1530, 1470, 1590, 1891, 1100, 890, 1250, 1470, 1860, 1230, 1320, 2200],
-		                    color: '#176E99',
-		                    marker: {
-		                     symbol: 'circle'
-		                    }
-		                  }
-		                ]
+                      {
+                        name: '2014',
+                        data: [1230, 1530, 1470, 1590, 2450, 1260, 1850, 1260, 1620, 1320, 1470, 1840],
+                        color: '#0B2E4F',
+                        marker: {
+                         symbol: 'circle'
+                        }
+                      },
+                      {
+                        name: '2015',
+                        data: [1530, 1470, 1590, 1891, 1100, 890, 1250, 1470, 1860, 1230, 1320, 2200],
+                        color: '#176E99',
+                        marker: {
+                         symbol: 'circle'
+                        }
+                      }
+                    ]
 chart.to_img()
 ```
 
