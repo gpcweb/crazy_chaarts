@@ -79,98 +79,46 @@ module CrazyChaarts
       }
     end
 
-    # Chart options
-    def chart_height=(height)
-      @hash[:chart][:height] = height
-    end
-
-    def chart_width=(width)
-      @hash[:chart][:width] = height
-    end
-
-    def chart_backgroundcolor=(color)
-      @hash[:chart][:backgroundColor] = color
-    end
-
-    # Title options
-    def title_text=(text)
-      @hash[:title][:text] = text
-    end
-
     # xAxis options
-    def xaxis_tickcolor=(color)
+    def xAxis_tickColor=(color)
       @hash[:xAxis][:tickColor] = color
     end
 
-    def xaxis_ticklength=(length)
+    def xAxis_tickLength=(length)
       @hash[:xAxis][:tickLength] = length
     end
 
-    def xaxis_linecolor=(color)
+    def xAxis_lineColor=(color)
       @hash[:xAxis][:lineColor] = color
     end
 
-    def xaxis_linewidth=(width)
+    def xAxis_lineWidth=(width)
       @hash[:xAxis][:lineWidth] = width
     end
 
-    def xaxis_categories=(categories)
+    def xAxis_categories=(categories)
       @hash[:xAxis][:categories] = categories
     end
 
     # yAxis options
-    def yaxis_tickcolor=(color)
+    def yAxis_tickColor=(color)
       @hash[:yAxis][:tickColor] = color
     end
 
-    def yaxis_ticklength=(length)
+    def yAxis_tickLength=(length)
       @hash[:yAxis][:tickLength] = length
     end
 
-    def yaxis_linecolor=(color)
+    def yAxis_lineColor=(color)
       @hash[:yAxis][:lineColor] = color
     end
 
-    def yaxis_linewidth=(width)
+    def yAxis_lineWidth=(width)
       @hash[:yAxis][:lineWidth] = width
     end
 
-    def yaxis_title=(title_options)
-      @hash[:yAxis][:title] = title_options
-    end
-
-    def yaxis_labels=(labels_options)
+    def yAxis_labels=(labels_options)
       @hash[:yAxis][:labels] = labels_options
-    end
-
-    # Legend options
-    def legend_layout=(layout)
-      @hash[:legend][:layout] = layout
-    end
-
-    def legend_align=(align)
-      @hash[:legend][:align] = align
-    end
-
-    def legend_verticalalign=(vertical_align)
-      @hash[:legend][:verticalAlign] = vertical_align
-    end
-
-    def legend_x=(x)
-      @hash[:legend][:x] = x
-    end
-
-    def legend_y=(y)
-      @hash[:legend][:y] = y
-    end
-
-    def legend_floating=(floating)
-      @hash[:legend][:floating] = floating
-    end
-
-    # Series options
-    def series_data=(series_data)
-      @hash[:series] = series_data
     end
 
     def yAxis_title=(yAxis_title)
