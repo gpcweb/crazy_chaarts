@@ -2,7 +2,7 @@ module CrazyChaarts
 
   class PieChart < BaseChart
 
-    def initialize()
+    def initialize(args = {})
       # Call base chart initialize
       super(args[:input_file], args[:outfile], args[:highcharts_path], args[:scale])
 
@@ -53,27 +53,27 @@ module CrazyChaarts
           name: 'Charges',
           colorByPoint: true,
           data: [{
-              name: 'Energia',
+              name: 'Energy',
               y: 102479,
               y_label: '$1.024.479'
           }, {
-              name: 'Demanda',
+              name: 'Demand',
               y: 100450,
               y_label: '$100.450'
           }, {
-              name: 'Demanda HP',
+              name: 'Peak Demand',
               y: 306147,
               y_label: '$306.147'
           }, {
-              name: 'Recargo FP',
+              name: 'PF Surcharge',
               y: 147159,
               y_label: '$147.159'
           }, {
-              name: 'Intereses',
+              name: 'Interest',
               y: 9580,
               y_label: '$9.580'
           }, {
-              name: 'Otros',
+              name: 'Others',
               y: 146780,
               y_label: '$146.780'
           }]
