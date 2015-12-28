@@ -2,10 +2,10 @@ module CrazyChaarts
 
   class BaseChart
 
-    attr_accessor :input_file
-    attr_accessor :output_file
-    attr_accessor :highcharts_path
-    attr_accessor :scale
+    attr_reader :input_file
+    attr_reader :output_file
+    attr_reader :highcharts_path
+    attr_reader :scale
 
 
     def initialize(input_file, output_file, highcharts_path, scale)
@@ -34,7 +34,7 @@ module CrazyChaarts
     end
 
     def chart_width=(width)
-      @hash[:chart][:width] = height
+      @hash[:chart][:width] = width
     end
 
     def chart_backgroundColor=(color)
